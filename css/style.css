@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+	/* Colors */
+	--very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--desaturated-dark-blue: hsl(214, 17%, 51%);
+	--grayish-blue: hsl(212, 23%, 69%);
+	--light-grayish-blue: hsl(210, 46%, 95%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Typography */
+	--manrope: "Manrope", sans-serif;
+	--fw-500: 500;
+	--fw-700: 700;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+body {
+	min-height: 99vh;
+	font-family: var(--manrope);
+	background-color: var(--light-grayish-blue);
+	color: var(--desaturated-dark-blue);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	margin: auto;
+	overflow: hidden;
+	width: 90%;
+	max-width: 40rem;
+	background-color: var(--white);
+	border-radius: 12px;
+	box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"article-image"
+		"article-detail";
+}
+
+.article-image {
+	grid-area: article-image;
+	background-image: url(../images/drawers.jpg);
+	background-size: cover;
+	height: 15rem;
+}
+
+.article-detail {
+	grid-area: article-detail;
+}
+
+.article-desc {
+	padding: 2.5rem 2.5rem 1.5rem 2.5rem;
+}
+
+.title {
+	font-size: 1.05rem;
+	font-weight: var(--fw-700);
+	color: var(--very-dark-grayish-blue);
+	margin-bottom: 1rem;
+	line-height: 1.3rem;
+}
+
+.description {
+	font-size: 0.86rem;
+	font-weight: var(--fw-500);
+	color: var(--desaturated-dark-blue);
+	line-height: 1.3rem;
+}
+
+.article-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	padding: 1rem 2.5rem 1rem;
+}
+
+.author {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	visibility: visible;
+	padding-bottom: 0.5rem;
+}
+
+.avatar {
+	border-radius: 50px;
+	width: 20%;
+}
+
+.about .author-name {
+	font-size: 0.87rem;
+	font-weight: var(--fw-700);
+	color: var(--very-dark-grayish-blue);
+	margin-bottom: 0.2rem;
+}
+
+.about .author-date {
+	font-size: 0.87rem;
+	font-weight: var(--fw-500);
+	color: var(--grayish-blue);
+}
+
+.arrow-share {
+	background: var(--light-grayish-blue);
+	padding: 0.8rem;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+}
+
+.arrow:active {
+	transform: scale(0.98);
+}
+
+.arrow-share:hover {
+	background: var(--grayish-blue);
+}
+
+.arrow-share:hover img {
+	filter: brightness(100);
+}
+
+.share {
+	visibility: hidden;
+	position: absolute;
+	background: var(--very-dark-grayish-blue);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0rem 2rem 0rem;
+	border-radius: 0px 0px 12px 12px;
+	transition: 0.3s ease-in-out;
+}
+
+.share p {
+	font-size: 1rem;
+	color: var(--grayish-blue);
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
+	margin-right: 1.2rem;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+li {
+	bottom: 0;
+	padding-right: 1rem;
+}
+
+a img:hover {
+	transform: scale(1.2);
+}
+
+.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 800px) {
+	main {
+		overflow: unset;
+		width: 90%;
+		max-width: 45rem;
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: "article-image article-detail";
+	}
+
+	.article-image {
+		width: 17rem;
+		height: 100%;
+		border-radius: 12px 0px 0px 12px;
+	}
+
+	.article-desc {
+		padding: 2.5rem 2.5rem 1rem;
+	}
+
+	.title {
+		font-size: 1.2rem;
+		line-height: 1.5rem;
+		word-spacing: 0.1rem;
+	}
+
+	.description {
+		font-size: 0.813rem;
+	}
+
+	.article-info {
+		padding: 0.5rem 2.5rem 1.5rem;
+	}
+
+	.avatar {
+		width: 13%;
+	}
+
+	.about .author-name {
+		font-size: 0.813rem;
+	}
+
+	.about .author-date {
+		font-size: 0.813rem;
+	}
+
+	.arrow-share {
+		padding: 0.6rem;
+		border-radius: 50px;
+	}
+
+	.share {
+		top: -4.7rem;
+		bottom: 10rem;
+		left: 16.5rem;
+		width: 55%;
+		height: 75%;
+		border-radius: 12px;
+		box-shadow: 0px 15px 15px -10px rgba(201, 213, 225, 0.503415);
+	}
+
+	.share::after {
+		content: "";
+		position: absolute;
+		width: 1.5rem;
+		height: 1.5rem;
+		bottom: -0.5rem;
+		left: 45%;
+		transform: rotate(45deg);
+		background: var(--very-dark-grayish-blue);
+	}
+
+	.share p {
+		font-size: 0.813rem;
+	}
+}
